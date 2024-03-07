@@ -15,7 +15,7 @@ import { glob } from 'glob';
 import * as path from 'path';
 import { E_TASK_STATUS } from '../../lib/enum';
 export default class BlockBuilder extends Service{
-  unpkgBaseUrl = 'https://npm.onmicrosoft.cn'
+  unpkgBaseUrl = 'http://106.15.72.197:8088'
   pkgName
   failedMessage
   // 将服务分为两种，一种是BuildService , 一种是操作数据库的DataService
@@ -300,14 +300,14 @@ export default class BlockBuilder extends Service{
   generatePackageJson(blockInfo, version) {
     let { label, id } = blockInfo
     label = label.replace(/\W|_/g, '').toLocaleLowerCase() || 'default'
-    const env = 'alpha' || 'dev'
-    const name = `@opentiny-assets/tinyengine-${env}-block-${label}-${id}` // 发包的名称根据自己情况更改
+    //const env = 'alpha' || 'dev'
+    const name = `@shqy/tinyengine-block-${label}-${id}` // 发包的名称根据自己情况更改
     this.pkgName = name
     return {
       name,
       version,
       description: '',
-      main: '',
+      main: 'js/web-component.es.js',
       keywords: [],
       author: '',
       license: 'ISC'
