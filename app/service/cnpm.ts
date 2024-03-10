@@ -19,8 +19,7 @@ export default class CnpmService extends Service {
   async loginInNpm(packagePath) {
     const commands = [
       'npm config set strict-ssl false',
-      `npm config set registry http://106.15.72.197:4873`,
-      `npm config set always-auth true`,      
+      `npm config set registry http://106.15.72.197:4873`,         
       `npm config set _auth c2hxeTpTaHF5MjAyMyFA`
     ];
     return this.ctx.helper.execCommandWithCatch(commands, { cwd: packagePath }, 'login npm');

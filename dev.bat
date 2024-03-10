@@ -1,2 +1,2 @@
-nvm use 16.18.1
+nvm use 20.10.0
 npm run dev
