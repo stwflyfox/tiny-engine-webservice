@@ -18,14 +18,15 @@ export default class CnpmService extends Service {
   async loginInNpm(packagePath) {
     const commands = [
       'npm config set strict-ssl false',
-      `npm config set registry https://npm.91zd.cn`   
+      `npm config set registry http://192.168.0.113:4873`   
     ];
     //const commands = ['npm publish']; 
     return this.ctx.helper.execCommandWithCatch(commands, { cwd: packagePath }, 'login npm');
   }
 
   async publishCnpm(packagePath) {
-    const commands = ['npm publish --registry https://npm.91zd.cn'];
+    const commands = [
+      'npm publish --registry http://192.168.0.113:4873'];
     return this.ctx.helper.execCommandWithCatch(commands, { cwd: packagePath }, 'publish npm');
   }
 
