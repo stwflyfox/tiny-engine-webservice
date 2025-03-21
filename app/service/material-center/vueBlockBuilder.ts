@@ -93,7 +93,7 @@ export default class VueBlockBuilder extends Service {
 
   // 清理构建目录
   async clear() {
-    await fs.remove(this.getBuildGround())
+    //await fs.remove(this.getBuildGround())
   }
 
   // 获取构建产物目录
