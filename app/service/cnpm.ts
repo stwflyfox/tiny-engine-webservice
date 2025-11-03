@@ -18,7 +18,7 @@ export default class CnpmService extends Service {
   async loginInNpm(packagePath) {
     const commands = [
       'npm config set strict-ssl false',
-      `npm config set registry http://121.37.24.105:4873`   
+      `npm config set registry http://192.168.0.113:4873`   
     ];
     //const commands = ['npm publish']; 
     return this.ctx.helper.execCommandWithCatch(commands, { cwd: packagePath }, 'login npm');
@@ -26,7 +26,7 @@ export default class CnpmService extends Service {
 
   async publishCnpm(packagePath) {
     const commands = [
-      'npm publish --registry http://121.37.24.105:4873'];
+      'npm publish --registry http://192.168.0.113:4873'];
     return this.ctx.helper.execCommandWithCatch(commands, { cwd: packagePath }, 'publish npm');
   }
 

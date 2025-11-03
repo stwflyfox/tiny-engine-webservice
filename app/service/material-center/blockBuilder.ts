@@ -15,7 +15,7 @@ import { glob } from 'glob';
 import * as path from 'path';
 import { E_TASK_STATUS } from '../../lib/enum';
 export default class BlockBuilder extends Service{
-  unpkgBaseUrl = 'https://unpkg.91zd.cn'
+  unpkgBaseUrl = 'http://192.168.0.113:8088'
   pkgName
   failedMessage
   // 将服务分为两种，一种是BuildService , 一种是操作数据库的DataService
